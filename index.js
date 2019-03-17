@@ -49,14 +49,14 @@ var Agenda = {
   init: function(){
     this.listenMapClick()
     this.sitiosGuardados = []
-    sessionStorage.setItem('sitios',JSON,stringify(this.sitiosGuardados))
+    sessionStorage.setItem('sitios',JSON.stringify(this.sitiosGuardados))
   },
   listenMapClick: function(){
     var self = this
     google.maps.event.addListener(map, 'click', function(ev){
       var position = ev.latLng
       var modalInfo = document.getElementsByClassName('modalInfo')[0].click()
-      var btnGuardar = document.getElementsByClassName('guardarInfo')[0]
+      var btnGuardar = document.getElementsByClassName('guardaInfo')[0]
       btnGuardar.onclick = function(e){
         e.preventDefault()
         var nombre = document.getElementsByClassName('nombre')[0],
@@ -100,7 +100,7 @@ var Agenda = {
       },
       map:map
     }
-    var newMarker = new.google.maps.Marker(markerOpts)
+    var newMarker = new google.maps.Marker(markerOpts)
     allSites.innerHTML = allSites + result
 
   }
